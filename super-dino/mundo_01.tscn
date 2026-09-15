@@ -1,8 +1,10 @@
-[gd_scene load_steps=10 format=3 uid="uid://dj32uj2cq0p5k"]
+[gd_scene format=3 uid="uid://dj32uj2cq0p5k"]
 
 [ext_resource type="Texture2D" uid="uid://cgj2ylhyjabep" path="res://move.png" id="1_i3vwg"]
+[ext_resource type="Script" uid="uid://bn7y2yc1x33uk" path="res://scripts/player.gd" id="1_kdjpu"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_kdjpu"]
+size = Vector2(38, 36)
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_m6in8"]
 atlas = ExtResource("1_i3vwg")
@@ -49,21 +51,33 @@ animations = [{
 "duration": 1.0,
 "texture": SubResource("AtlasTexture_8dnhk")
 }],
-"loop": true,
+"loop": 1,
 "name": &"default",
 "speed": 10.0
 }]
 
-[node name="Mundo-01" type="Node2D"]
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_1j1uw"]
+size = Vector2(771, 20)
 
-[node name="Player" type="CharacterBody2D" parent="."]
+[node name="Mundo-01" type="Node2D" unique_id=611730953]
 
-[node name="Collision" type="CollisionShape2D" parent="Player"]
-position = Vector2(56, 65)
+[node name="Player" type="CharacterBody2D" parent="." unique_id=1000546351]
+script = ExtResource("1_kdjpu")
+
+[node name="Collision" type="CollisionShape2D" parent="Player" unique_id=823013827]
+position = Vector2(65, 57)
 shape = SubResource("RectangleShape2D_kdjpu")
 
-[node name="Anim" type="AnimatedSprite2D" parent="Player"]
+[node name="Anim" type="AnimatedSprite2D" parent="Player" unique_id=1519481807]
 texture_filter = 1
-position = Vector2(55, 65)
+position = Vector2(63, 58)
+scale = Vector2(1.75, 1.7083334)
 sprite_frames = SubResource("SpriteFrames_fodia")
-frame_progress = 0.265683
+autoplay = "default"
+frame_progress = 0.96423274
+
+[node name="StaticBody2D" type="StaticBody2D" parent="." unique_id=1378079630]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="StaticBody2D" unique_id=26846929]
+position = Vector2(349, 304)
+shape = SubResource("RectangleShape2D_1j1uw")
