@@ -1,4 +1,4 @@
-[gd_scene format=3 uid="uid://dj32uj2cq0p5k"]
+[gd_scene load_steps=7 format=3 uid="uid://dj32uj2cq0p5k"]
 
 [ext_resource type="Texture2D" uid="uid://utey5nbv2a75" path="res://Seasonal Tilesets/Seasonal Tilesets/2 - Autumn Forest/Terrain (16 x 16).png" id="1_ipa7m"]
 [ext_resource type="Texture2D" uid="uid://vgvgkbdoupmg" path="res://Seasonal Tilesets/Seasonal Tilesets/1 - Grassland/Grassland_entities (16 x 16).png" id="2_e7jlq"]
@@ -23,7 +23,7 @@ texture = ExtResource("1_ipa7m")
 2:3/0 = 0
 3:3/0 = 0
 4:3/0 = 0
-4:3/0/physics_layer_0/polygon_0/points = PackedVector2Array(-8, 3.057598, -8, -8, 8, -8, 8, 8, -8, 8)
+4:3/0/physics_layer_0/polygon_0/points = PackedVector2Array(-8, 3.0576, -8, -8, 8, -8, 8, 8, -8, 8)
 5:3/0 = 0
 6:3/0 = 0
 7:3/0 = 0
@@ -115,9 +115,9 @@ physics_layer_0/collision_layer = 1
 sources/0 = SubResource("TileSetAtlasSource_373ki")
 sources/1 = SubResource("TileSetAtlasSource_fnxnj")
 
-[node name="Mundo-01" type="Node2D" unique_id=611730953]
+[node name="Mundo-01" type="Node2D"]
 
-[node name="level" type="TileMap" parent="." unique_id=1737703984]
+[node name="level" type="TileMap" parent="."]
 tile_set = SubResource("TileSet_1j1uw")
 format = 2
 layer_0/name = "ground"
@@ -125,5 +125,5 @@ layer_0/tile_data = PackedInt32Array(1048576, 262144, 3, 1048577, 262144, 3, 104
 layer_1/name = "trees"
 layer_1/tile_data = PackedInt32Array(1507343, 458753, 3, 1179663, 458753, 1, 1114125, 327681, 3, 851985, 327681, 1, 917521, 327681, 2, 983057, 327681, 3, 851986, 393217, 1, 917522, 393217, 2, 983058, 393217, 3, 851987, 458753, 1, 917523, 458753, 2, 983059, 458753, 3)
 
-[node name="Player" parent="." unique_id=1380725850 instance=ExtResource("3_m6in8")]
+[node name="Player" parent="." instance=ExtResource("3_m6in8")]
 position = Vector2(106, 257)

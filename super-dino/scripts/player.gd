@@ -1,37 +1,40 @@
 extends CharacterBody2D
 
+const SPEED = 100.0
 
-const SPEED = 10000.0
-const JUMP_FORCE = -400.0
+var pulo = -600
 
-@onready var animação = $Anim
-
+var virado = false
 func _physics_process(delta: float) -> void:
 	
+	velocity += get_gravity()*delta
 	
-	# Add the gravity.
-	if not is_on_floor():
-		velocity += get_gravity() * delta
-
-	# Handle jump.
-	if Input.is_action_just_pressed("ui_accept") and is_on_floor():
-		velocity.y = JUMP_FORCE
-
-	# Get the input direction and handle the movement/deceleration.
-	# As good practice, you should replace UI actions with custom gameplay actions.
 	
-	if Input.is_action_pressed("ui_left"):
+	velocity = Vector2.ZERO
+	
+	if Input.is_action_pressed("ui_select"):
+		velocity.y = pulo
+		$Anim.play("jump")
+	
+	if Input.is_action_pressed('ui_left'):
+		virado = true
+		velocity.x = -1 * SPEED
 		
-		velocity.x = delta * SPEED
-	
-		animação.play("run in")
-
-	if Input.is_action_pressed("ui_right"):
-		velocity.x = delta * SPEED
-		animação.play("run")
-
-	else:
-		velocity.x = move_toward(velocity.x, 0, SPEED)
-		animação.play("stop")
+	if Input.is_action_pressed('ui_right'):
+		virado = false
+		velocity.x = 1 * SPEED
 	move_and_slide()
 	
+	if velocity == Vector2.ZERO:
+		$"Anim".play("stop")
+		$"Anim".flip_h  = virado
+		
+		
+	else: 
+		$"Anim".play("run")
+		if velocity.x < 0:
+			
+			$"Anim".flip_h = true
+		
+		else: 
+			$Anim.flip_h = false
