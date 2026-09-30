@@ -1,16 +1,17 @@
 extends CharacterBody2D
 
-const SPEED = 100.0
+const SPEED = 300
 
-var pulo = -600
+var pulo = -300
 
 var virado = false
 func _physics_process(delta: float) -> void:
+	if is_on_floor():
+		velocity = Vector2.ZERO
+	else:
+		velocity += get_gravity()*delta
 	
-	velocity += get_gravity()*delta
 	
-	
-	velocity = Vector2.ZERO
 	
 	if Input.is_action_pressed("ui_select"):
 		velocity.y = pulo
