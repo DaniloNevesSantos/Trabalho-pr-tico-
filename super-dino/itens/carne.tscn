@@ -1,0 +1,37 @@
+[gd_scene load_steps=6 format=3 uid="uid://cjil220ikuxvr"]
+
+[ext_resource type="Texture2D" uid="uid://nudug4e35svs" path="res://Seasonal Tilesets/Seasonal Tilesets/baixados_carne.03.png" id="1_2ryi0"]
+[ext_resource type="Script" uid="uid://cccttg52igunv" path="res://itens/carne.gd" id="1_qllvd"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_qllvd"]
+atlas = ExtResource("1_2ryi0")
+region = Rect2(0, 248, 393, 248)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_16300"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_qllvd")
+}],
+"loop": true,
+"name": &"default",
+"speed": 1.0
+}]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_4o1of"]
+size = Vector2(25, 24)
+
+[node name="carne" type="Area2D"]
+collision_layer = 8
+script = ExtResource("1_qllvd")
+
+[node name="Anim" type="AnimatedSprite2D" parent="."]
+scale = Vector2(0.0776081, 0.0947581)
+sprite_frames = SubResource("SpriteFrames_16300")
+frame_progress = 0.889913
+
+[node name="Collision" type="CollisionShape2D" parent="."]
+position = Vector2(-2.5, 0)
+shape = SubResource("RectangleShape2D_4o1of")
+
+[connection signal="body_entered" from="." to="." method="_on_body_entered"]
