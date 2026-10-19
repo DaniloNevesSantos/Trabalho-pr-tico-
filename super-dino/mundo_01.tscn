@@ -180,10 +180,13 @@ centered = false
 [node name="carnes" type="Node2D" parent="."]
 
 [node name="carne" parent="carnes" instance=ExtResource("11_0tqap")]
-position = Vector2(384, 176)
+position = Vector2(384, 184)
 
 [node name="carne3" parent="carnes" instance=ExtResource("11_0tqap")]
-position = Vector2(280, 112)
+position = Vector2(280, 120)
+
+[node name="carne3" parent="carnes/carne3" instance=ExtResource("11_0tqap")]
+position = Vector2(72, -32)
 
 [node name="carne2" parent="carnes" instance=ExtResource("11_0tqap")]
-position = Vector2(496, 64)
+position = Vector2(496, 72)
