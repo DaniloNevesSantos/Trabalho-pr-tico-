@@ -1,0 +1,23 @@
+[gd_scene format=3]
+
+[ext_resource type="Script" path="res://itens/interagivel.gd" id="1_inter"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_inter"]
+size = Vector2(40, 40)
+
+[node name="Interagivel" type="Area2D"]
+collision_layer = 0
+collision_mask = 1
+script = ExtResource("1_inter")
+
+[node name="Colisao" type="CollisionShape2D" parent="."]
+shape = SubResource("RectangleShape2D_inter")
+
+[node name="Dica" type="Label" parent="."]
+offset_left = -30.0
+offset_top = -42.0
+offset_right = 30.0
+offset_bottom = -22.0
+horizontal_alignment = 1
+theme_override_font_sizes/font_size = 10
+text = "[E]"

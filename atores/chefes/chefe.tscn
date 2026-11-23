@@ -1,0 +1,14 @@
+[gd_scene format=3 uid="uid://dawjpxuigrab6"]
+
+[ext_resource type="Script" uid="uid://cjgg6jykwxh17" path="res://atores/chefes/chefe.gd" id="1_chefe"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_chefe"]
+
+[node name="Chefe" type="CharacterBody2D" unique_id=323676523]
+collision_layer = 2
+script = ExtResource("1_chefe")
+
+[node name="Colisao" type="CollisionShape2D" parent="." unique_id=579405535]
+shape = SubResource("RectangleShape2D_chefe")
+
+[node name="Anim" type="AnimatedSprite2D" parent="." unique_id=2067310616]

@@ -1,0 +1,17 @@
+[gd_scene format=3]
+
+[ext_resource type="Script" path="res://itens/carne.gd" id="1_carne"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_carne"]
+size = Vector2(14, 12)
+
+[node name="Carne" type="Area2D"]
+collision_layer = 0
+collision_mask = 1
+script = ExtResource("1_carne")
+
+[node name="Sprite" type="Sprite2D" parent="."]
+scale = Vector2(0.065, 0.065)
+
+[node name="Colisao" type="CollisionShape2D" parent="."]
+shape = SubResource("RectangleShape2D_carne")
